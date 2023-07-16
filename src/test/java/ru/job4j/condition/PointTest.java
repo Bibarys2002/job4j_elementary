@@ -1,35 +1,45 @@
 package ru.job4j.condition;
 
-import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-class PointTest {
+public class PointTest {
     @Test
-    void when00to20then2() {
+   public  void when00to20then2() {
         double expected = 2;
-        double out = Point.distance(0, 0, 2, 0);
-        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+        int x1 = 0;
+        int y1 = 0;
+        int x2 = 2;
+        int y2 = 0;
+        double out = Point.distance(x1, y1, x2, y2);
+        Assert.assertEquals(expected, out, 0.01);    }
+
+    @Test
+    public void when00to21then3() {
+        double expected = 2.23;
+        int x1 = 0;
+        int y1 = 0;
+        int x2 = 2;
+        int y2 = 1;
+        double out = Point.distance(x1, y1, x2, y2);
+        Assert.assertEquals(expected, out, 0.01);
     }
 
     @Test
-    void when00to21then3() {
-        double expected = 3;
-        double out = Point.distance(0, 0, 2, 1);
-        assertThat(out).isEqualTo(expected, withPrecision(0.01));
+    public void when02to20then2dot83() {
+        double expected = 2.83;
+        int x1 = 0;
+        int y1 = 2;
+        int x2 = 2;
+        int y2 = 0;
+        double out = Point.distance(x1, y1, x2, y2);
+        Assert.assertEquals(expected, out, 0.01);
     }
 
     @Test
-    void when00to11then2() {
-        double expected = 2;
-        double out = Point.distance(0, 0, 1, 1);
-        assertThat(out).isEqualTo(expected, withPrecision(0.01));
-    }
-
-    @Test
-    void when12to00the3() {
-        double expected = 3;
+    public void when12to00the3() {
+        double expected = 2.23;
         double out = Point.distance(1, 2, 0, 0);
-        assertThat(out).isEqualTo(expected, withPrecision(0.01));
-    }
+        Assert.assertEquals(expected, out, 0.01);    }
 
 }
