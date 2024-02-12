@@ -31,7 +31,7 @@ public class EndsWithTest {
     @Test
     public void whenNotEndWithPrefix2ThenFalse() {
         char[] word = {'B', 'i', 'b', 'a'};
-        char[] postfix = {'B', 'b', 'a'};
+        char[] postfix = {'B', 'b', 'b'};
         boolean result = EndsWith.endsWith(word, postfix);
         assertThat(result).isFalse();
     }
