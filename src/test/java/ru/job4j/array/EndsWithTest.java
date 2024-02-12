@@ -19,4 +19,20 @@ public class EndsWithTest {
         boolean result = EndsWith.endsWith(word, postfix);
         assertThat(result).isFalse();
     }
+
+    @Test
+    public void whenNotEndWithPrefix1ThenFalse() {
+        char[] word = {'B', 'i', 'b', 'a'};
+        char[] postfix = {'i', 'b', 'a'};
+        boolean result = EndsWith.endsWith(word, postfix);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void whenNotEndWithPrefix2ThenFalse() {
+        char[] word = {'B', 'i', 'b', 'a'};
+        char[] postfix = {'B', 'b', 'a'};
+        boolean result = EndsWith.endsWith(word, postfix);
+        assertThat(result).isFalse();
+    }
 }
