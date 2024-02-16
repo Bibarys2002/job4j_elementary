@@ -1,3 +1,4 @@
+
 package ru.job4j.array;
 
 public class FindLoop {
@@ -8,7 +9,13 @@ public class FindLoop {
                 result = i;
                 break;
             }
+
         }
+
         return result;
     }
 }
+
+
+
+
