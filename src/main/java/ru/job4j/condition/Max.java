@@ -1,31 +1,27 @@
 package ru.job4j.condition;
 
 public class Max {
-    public static int max(int left, int right) {
-        int result = left > right ? left : right;
-        return result;
+    public static   int max(int a, int b) {
+        return a > b  ? a : b;
+    }
+
+    public static   int max(int a, int b, int c) {
+        return max(a,
+                max(b, c));
+    }
+
+    public static int max(int a, int b, int c, int d) {
+        return max(d,
+                max(b, c, d));
     }
 
     public static void main(String[] args) {
         int rsl = Max.max(2, 4);
         System.out.println(rsl);
-        int rsl1 = Max.max(-10, 4);
+        int rsl1 = Max.max(-10, 4, 2);
         System.out.println(rsl1);
-        int rsl2 = Max.max(14, 14);
+        int rsl2 = Max.max(14, 14, 10, 20);
         System.out.println(rsl2);
     }
 
 }
-/*package ru.job4j.condition;
-
-public class Film {
-    public static String permission(int age) {
-        String label = age >= 18 ? "Please, enjoy it." : "You can't watch it.";
-        return label;
-    }
-
-    public static void main(String[] args) {
-        String msg = Film.permission(33);
-        System.out.println(msg);
-    }
-}*/
